@@ -101,6 +101,14 @@ fun TodayDua(modifier: Modifier = Modifier) {
     })
 }
 
+
+data class AzkarItem(
+    @DrawableRes val resourceId: Int,
+    val size: Dp,
+    val name: String,
+    val type: AzkarScreens,
+)
+
 sealed class AzkarScreens {
     companion object ss {
         object MorningZeker : AzkarScreens()
@@ -111,12 +119,6 @@ sealed class AzkarScreens {
         object SleepZeker : AzkarScreens()
     }
 }
-data class AzkarItem(
-    @DrawableRes val resourceId: Int,
-    val size: Dp,
-    val name: String,
-    val type: AzkarScreens,
-)
 
 @Preview
 @Composable
