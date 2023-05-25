@@ -9,4 +9,6 @@ val White = Color(0xFFFFFFFF) // Surface
 val AlabamaCrimson = Color(0xFFB00020) // Error
 val DarkSlateGray = Color(0xFF2A5A5F) // On Background
 val ViridianGreen = Color(0xFF18979E) // On Surface
-val Platinum = Color(0xFFE5E5E5) // On Surface
+val Platinum = Color(0xFFE5E5E5)
+val BrightGray = Color(0xFFECECEC)
+val LightTaupe = Color(0xFFAE8D6F)

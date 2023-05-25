@@ -3,7 +3,6 @@ package com.muhkhaled.wazzakrine.azkarFeature.presentation
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
@@ -29,7 +28,10 @@ import com.muhkhaled.wazzakrine.core.presentation.theme.WazzakrineTheme
 fun AzkarScreen() {
     Column(modifier = Modifier.fillMaxSize()) {
         TodayDua(Modifier.padding(top = 16.dp, start = 16.dp, end = 16.dp))
-        AzkarCategory(Modifier.weight(1F).padding(16.dp))
+        AzkarCategory(
+            Modifier
+                .padding(16.dp)
+        )
     }
 }
 
@@ -123,24 +125,27 @@ fun TodaysDuaPrev() {
 
 @Composable
 fun AzkarCategory(modifier: Modifier = Modifier) {
-    Column(modifier = modifier.fillMaxSize()) {
+    Column(
+        modifier = modifier.wrapContentHeight().fillMaxWidth(),
+        verticalArrangement = Arrangement.Top
+    ) {
         Row(
             modifier = Modifier
-                .fillMaxWidth()
-                .weight(1F),
+                .fillMaxWidth().wrapContentHeight(),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
             ZekerItem(
-                modifier = Modifier.weight(1F),
+                modifier = Modifier.height(174.dp).weight(1F),
                 resourceId = R.drawable.morinig_img,
                 zekerName = "Morning"
             )
             Column(
                 modifier = Modifier
+                    .height(174.dp)
                     .weight(1F)
                     .padding(start = 8.dp)
-            ){
+            ) {
                 Row(
                     modifier = Modifier.weight(1F),
                     horizontalArrangement = Arrangement.Center,
@@ -170,19 +175,20 @@ fun AzkarCategory(modifier: Modifier = Modifier) {
         }
         Row(
             modifier = Modifier
-                .fillMaxWidth()
-                .weight(1F)
+                .fillMaxWidth().wrapContentHeight()
                 .padding(top = 8.dp),
-            horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
             ZekerItem(
-                modifier = Modifier.weight(1F),
+                modifier = Modifier
+                    .height(174.dp)
+                    .weight(1F),
                 resourceId = R.drawable.pray_img,
                 zekerName = "Pray"
             )
             ZekerItem(
                 modifier = Modifier
+                    .height(174.dp)
                     .weight(1F)
                     .padding(start = 8.dp),
                 resourceId = R.drawable.evening_img,
