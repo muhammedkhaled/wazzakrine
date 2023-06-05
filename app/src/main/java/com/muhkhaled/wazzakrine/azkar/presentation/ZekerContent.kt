@@ -1,6 +1,7 @@
-package com.muhkhaled.wazzakrine.azkarFeature.presentation
+package com.muhkhaled.wazzakrine.azkar.presentation
 
 import androidx.annotation.StringRes
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -19,7 +20,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -135,97 +135,112 @@ fun ZekerItem(modifier: Modifier = Modifier) {
             .fillMaxWidth()
             .wrapContentHeight()
     ) {
-        Column(
+        Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .paint(
-                    painter = painterResource(id = R.drawable.shape_card),
-                    contentScale = ContentScale.FillBounds
-                ).clickable {  },
-            horizontalAlignment = Alignment.End,
-            verticalArrangement = Arrangement.SpaceEvenly
+                .wrapContentHeight()
         ) {
-            Text(
-                modifier = Modifier
-                    .align(Alignment.CenterHorizontally)
-                    .background(
-                        shape = RoundedCornerShape(8.dp), color = Color.LightGray
-                    )
-                    .padding(top = 4.dp, bottom = 4.dp, start = 16.dp, end = 16.dp),
-                text = "1/27",
-                fontSize = 14.sp,
-                textAlign = TextAlign.Center,
-                fontWeight = FontWeight.Bold
+            Image(
+                modifier = Modifier.align(Alignment.TopEnd),
+                painter = painterResource(id = R.drawable.shape_top_end),
+                contentDescription = null
             )
-            Text(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp, start = 24.dp, end = 24.dp),
-                text = "اللهم إني أشهد أنك أنت الله لا إله إلا أنت الأحد الصمد الذي لم يلد ولم يولد ولم يكن له كفوا أحد",
-                textAlign = TextAlign.End,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Bold
+            Image(
+                modifier = Modifier.align(Alignment.BottomStart),
+                painter = painterResource(id = R.drawable.shape_bottom_start),
+                contentDescription = null
             )
-            Text(
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp, start = 24.dp, end = 24.dp),
-                text = ".من قالها أعتقه الله من النار",
-                textAlign = TextAlign.End,
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Bold,
-                color = LightTaupe
-            )
-            Divider(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 16.dp, end = 16.dp, top = 16.dp)
-            )
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp, bottom = 16.dp),
-                horizontalArrangement = Arrangement.SpaceEvenly,
-                verticalAlignment = Alignment.CenterVertically
+                    .padding(top = 16.dp)
+                    .fillMaxWidth(),
+                horizontalAlignment = Alignment.End,
+                verticalArrangement = Arrangement.SpaceEvenly
             ) {
-                IconButton(
-                    onClick = {}, modifier = Modifier
-                        .clip(CircleShape)
-                        .background(MaterialTheme.colors.primary)
+                Text(
+                    modifier = Modifier
+                        .align(Alignment.CenterHorizontally)
+                        .background(
+                            shape = RoundedCornerShape(8.dp), color = Color.LightGray
+                        )
+                        .padding(top = 4.dp, bottom = 4.dp, start = 16.dp, end = 16.dp),
+                    text = "1/27",
+                    fontSize = 14.sp,
+                    textAlign = TextAlign.Center,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp, start = 24.dp, end = 24.dp),
+                    text = "اللهم إني أشهد أنك أنت الله لا إله إلا أنت الأحد الصمد الذي لم يلد ولم يولد ولم يكن له كفوا أحد",
+                    textAlign = TextAlign.End,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp, start = 24.dp, end = 24.dp),
+                    text = ".من قالها أعتقه الله من النار",
+                    textAlign = TextAlign.End,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = LightTaupe
+                )
+                Divider(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 16.dp, end = 16.dp, top = 16.dp)
+                )
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp, bottom = 16.dp),
+                    horizontalArrangement = Arrangement.SpaceEvenly,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Icon(
-                        modifier = Modifier.padding(6.dp),
-                        imageVector = Icons.Default.Share,
-                        tint = Color.White,
-                        contentDescription = null
-                    )
-                }
-                IconButton(
-                    onClick = {}, modifier = Modifier
-                        .clip(CircleShape)
-                        .background(MaterialTheme.colors.primary)
-                ) {
-                    Text(
-                        modifier = Modifier.padding(16.dp),
-                        text = "0/4",
-                        fontSize = 18.sp,
-                        color = Color.White
-                    )
-                }
-                IconButton(
-                    onClick = {}, modifier = Modifier
-                        .clip(CircleShape)
-                        .background(MaterialTheme.colors.primary)
-                ) {
-                    Icon(
-                        modifier = Modifier.padding(6.dp),
-                        imageVector = Icons.Default.PlayArrow,
-                        tint = Color.White,
-                        contentDescription = null
-                    )
+                    IconButton(
+                        onClick = {}, modifier = Modifier
+                            .clip(CircleShape)
+                            .background(MaterialTheme.colors.primary)
+                    ) {
+                        Icon(
+                            modifier = Modifier.padding(6.dp),
+                            imageVector = Icons.Default.Share,
+                            tint = Color.White,
+                            contentDescription = null
+                        )
+                    }
+                    IconButton(
+                        onClick = {}, modifier = Modifier
+                            .clip(CircleShape)
+                            .background(MaterialTheme.colors.primary)
+                    ) {
+                        Text(
+                            modifier = Modifier.padding(16.dp),
+                            text = "0/4",
+                            fontSize = 18.sp,
+                            color = Color.White
+                        )
+                    }
+                    IconButton(
+                        onClick = {}, modifier = Modifier
+                            .clip(CircleShape)
+                            .background(MaterialTheme.colors.primary)
+                    ) {
+                        Icon(
+                            modifier = Modifier.padding(6.dp),
+                            imageVector = Icons.Default.PlayArrow,
+                            tint = Color.White,
+                            contentDescription = null
+                        )
+                    }
                 }
             }
         }
+
+
     }
 }
 

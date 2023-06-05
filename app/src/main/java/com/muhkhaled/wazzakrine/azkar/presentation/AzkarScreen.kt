@@ -1,4 +1,4 @@
-package com.muhkhaled.wazzakrine.azkarFeature.presentation
+package com.muhkhaled.wazzakrine.azkar.presentation
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -50,63 +50,68 @@ fun AzkarScreenPrev() {
 @Composable
 fun TodayDua(modifier: Modifier = Modifier) {
     Card(modifier = modifier.fillMaxWidth()) {
-        Column(
+
+        Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .paint(
-                    painter = painterResource(id = R.drawable.todays_dua_img),
-                    contentScale = ContentScale.FillBounds
-                )
+                .wrapContentHeight()
         ) {
-            Row(
-                modifier = Modifier
-                    .padding(16.dp)
-                    .wrapContentSize(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Image(
-                    modifier = Modifier.size(20.dp),
-                    painter = painterResource(id = R.drawable.handwithsebha_img),
-                    contentDescription = null
-                )
-                Text(
-                    modifier = Modifier.padding(start = 4.dp),
-                    text = "Today's Dua",
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.Bold
-                )
-            }
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    modifier = Modifier.padding(
-                        start = 16.dp,
-                        end = 16.dp,
-                        top = 8.dp,
-                        bottom = 16.dp
-                    ),
-                    text = "اللَّهمَّ إنِّي أسألُكَ عِلمًا نافعًا ورزقًا طيِّبًا وعملًا متقبَّلًا",
-                    fontSize = 24.sp,
-                    textAlign = TextAlign.Center
-                )
-                Divider(
+            Image(
+                modifier = Modifier.align(Alignment.TopEnd),
+                painter = painterResource(id = R.drawable.shape_top_end),
+                contentDescription = null
+            )
+            Column(modifier = Modifier.fillMaxWidth()) {
+                Row(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 16.dp, end = 16.dp, top = 16.dp)
-                )
-                TextButton(onClick = { }) {
-                    Row(
-                        modifier = Modifier.wrapContentSize(),
-                        horizontalArrangement = Arrangement.Center
-                    ) {
-                        Icon(
-                            Icons.Default.Share,
-                            tint = MaterialTheme.colors.primary,
-                            contentDescription = null
-                        )
-                        Text(modifier = Modifier.padding(start = 8.dp), text = "Share")
+                        .padding(16.dp)
+                        .wrapContentSize(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Image(
+                        modifier = Modifier.size(20.dp),
+                        painter = painterResource(id = R.drawable.handwithsebha_img),
+                        contentDescription = null
+                    )
+                    Text(
+                        modifier = Modifier.padding(start = 4.dp),
+                        text = "Today's Dua",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        modifier = Modifier.padding(
+                            start = 16.dp,
+                            end = 16.dp,
+                            top = 8.dp,
+                            bottom = 16.dp
+                        ),
+                        text = "اللَّهمَّ إنِّي أسألُكَ عِلمًا نافعًا ورزقًا طيِّبًا وعملًا متقبَّلًا",
+                        fontSize = 24.sp,
+                        textAlign = TextAlign.Center
+                    )
+                    Divider(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(start = 16.dp, end = 16.dp, top = 16.dp)
+                    )
+                    TextButton(onClick = { }) {
+                        Row(
+                            modifier = Modifier.wrapContentSize(),
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            Icon(
+                                Icons.Default.Share,
+                                tint = MaterialTheme.colors.primary,
+                                contentDescription = null
+                            )
+                            Text(modifier = Modifier.padding(start = 8.dp), text = "Share")
+                        }
                     }
                 }
             }
@@ -126,17 +131,22 @@ fun TodaysDuaPrev() {
 @Composable
 fun AzkarCategory(modifier: Modifier = Modifier) {
     Column(
-        modifier = modifier.wrapContentHeight().fillMaxWidth(),
+        modifier = modifier
+            .wrapContentHeight()
+            .fillMaxWidth(),
         verticalArrangement = Arrangement.Top
     ) {
         Row(
             modifier = Modifier
-                .fillMaxWidth().wrapContentHeight(),
+                .fillMaxWidth()
+                .wrapContentHeight(),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
             ZekerItem(
-                modifier = Modifier.height(174.dp).weight(1F),
+                modifier = Modifier
+                    .height(174.dp)
+                    .weight(1F),
                 resourceId = R.drawable.morinig_img,
                 zekerName = "Morning"
             )
@@ -175,7 +185,8 @@ fun AzkarCategory(modifier: Modifier = Modifier) {
         }
         Row(
             modifier = Modifier
-                .fillMaxWidth().wrapContentHeight()
+                .fillMaxWidth()
+                .wrapContentHeight()
                 .padding(top = 8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
