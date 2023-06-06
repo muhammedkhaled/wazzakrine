@@ -41,7 +41,6 @@ fun DateCard(modifier: Modifier = Modifier) {
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .wrapContentHeight()
             .padding(start = 16.dp, end = 16.dp)
     ) {
         Row(
@@ -78,5 +77,20 @@ fun DateCard(modifier: Modifier = Modifier) {
 fun DataCardPrev() {
     WazzakrineTheme {
         DateCard()
+    }
+}
+
+
+@Composable
+fun AllPrayersCard(modifier: Modifier = Modifier) {
+    Card(
+        modifier = modifier
+            .fillMaxWidth()
+            .wrapContentHeight()
+            .padding(16.dp)
+    ) {
+        Column(modifier = Modifier.fillMaxWidth()) {
+            
+        }
     }
 }
