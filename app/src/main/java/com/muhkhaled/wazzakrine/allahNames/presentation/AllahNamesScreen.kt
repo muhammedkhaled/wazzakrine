@@ -41,7 +41,7 @@ fun AllahNamesScreen(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun HeaderHadeth(modifier: Modifier = Modifier) {
+private fun  HeaderHadeth(modifier: Modifier = Modifier) {
     Card(
         modifier = modifier
             .fillMaxWidth()

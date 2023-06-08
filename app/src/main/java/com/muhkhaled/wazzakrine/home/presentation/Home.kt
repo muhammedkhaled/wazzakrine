@@ -99,7 +99,7 @@ fun HomeFirstUiPart() {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            NextAzanCard()
+            NextAzanCard(modifier = Modifier.wrapContentHeight().width(160.dp))
             Column(
                 modifier = Modifier.fillMaxHeight(),
                 verticalArrangement = Arrangement.SpaceEvenly,
@@ -230,18 +230,18 @@ fun CurrentPlaceAndTempPrev() {
 }
 
 @Composable
-fun NextAzanCard(modifier: Modifier = Modifier) {
+fun NextAzanCard(modifier: Modifier = Modifier, columnModifier: Modifier = Modifier) {
     Card(
         backgroundColor = Color.Transparent,
-        modifier = modifier.wrapContentSize()
+        modifier = modifier
     ) {
         Column(
-            modifier = Modifier
+            modifier = columnModifier
                 .paint(
                     painter = painterResource(id = R.drawable.next_azan),
                     contentScale = ContentScale.FillBounds
                 )
-                .width(160.dp)
+                .fillMaxWidth()
                 .padding(start = 4.dp, end = 4.dp),
             verticalArrangement = Arrangement.SpaceBetween,
             horizontalAlignment = Alignment.CenterHorizontally
@@ -270,7 +270,6 @@ fun NextAzanCard(modifier: Modifier = Modifier) {
                 color = Color.White
             )
         }
-
     }
 }
 
